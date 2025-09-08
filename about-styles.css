@@ -1,0 +1,553 @@
+/* Reset and base styles */
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+.fjalla-one-regular {
+  font-family: "Fjalla One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bg-dots {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#CBD1BF 1.4px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 0; /* sits below .background */
+    animation: fadeOut 10s ease forwards;
+    pointer-events: none; /* prevent blocking clicks */
+}
+
+.background {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #F9FCF3;
+    color: #f9fcf3;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Container */
+.container {
+    background-color: #F9FCF3;
+    overflow: visible;
+    width: 1440px;
+    height: auto;
+    min-height: 1120px;
+}
+
+.main-wrapper {
+    position: relative;
+    width: 1451px;
+    height: auto;
+    min-height: 1131px;
+    top: -11px;
+    left: -10px;
+    background-color: #F9FCF3;
+}
+
+/* Header Navigation */
+.header {
+    position: absolute;
+    width: 1029px;
+    height: 24px;
+    top: 73px;
+    left: 221px;
+}
+
+.navigation {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.nav-link {
+    position: absolute;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: #383838;
+    font-size: 20px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.nav-home {
+    left: 0;
+}
+
+.nav-project {
+    left: 211px;
+}
+
+.nav-about {
+    left: 441px;
+}
+
+.nav-contact {
+    left: 689px;
+}
+
+.nav-resume {
+    left: 899px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #da4646;
+}
+
+/* Main Content */
+.about-main {
+    position: absolute;
+    top: 209px;
+    left: 250px;
+    right: 250px;
+}
+
+/* Page Title */
+.page-title {
+    font-family: "Fjalla One", sans-serif;
+    font-weight: 400;
+    color: #da4646;
+    font-size: 40px;
+    text-align: left;
+    margin-bottom: 50px;
+    line-height: normal;
+}
+
+/* Personality Section */
+.personality-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.traits-left,
+.traits-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.trait-tag {
+    background-color: transparent;
+    border: 2px solid #383838;
+    color: #383838;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.trait-tag:hover {
+    background: linear-gradient(135deg, #DA4646 0%, #FFB26E 100%);
+    border: 2px solid #F9FCF3;
+    color: #F9FCF3; /* White text on hover */
+    transform: translateY(-2px);
+}
+
+.profile-photo {
+    width: 250px;
+    height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.02);
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Philosophy Section */
+.philosophy-section {
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+    margin-bottom: 40px;
+    margin-left: -20px; /* ADD THIS LINE */
+}
+
+.philosophy-content {
+    margin-left: 250px;
+}
+
+.philosophy-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #383838;
+    font-size: 32px;
+    display: inline;
+    margin-right: 20px;
+}
+
+.philosophy-words {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.philosophy-word {
+    font-family: "Fjalla One", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    color: #da4646;
+    display: block;
+    line-height: 1.2;
+}
+
+.philosophy-word.intention {
+    display: inline;
+}
+
+.philosophy-word.care,
+.philosophy-word.purpose {
+    margin-left: 0;
+}
+
+/* Section Styles */
+.section-title {
+    font-family: "Fjalla One", sans-serif;
+    font-weight: 400;
+    color: #383838;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+/* Education Section */
+.education-section {
+    margin-top: 100px;
+    margin-bottom: 80px;
+}
+
+.education-item {
+    margin-bottom: 40px;
+}
+
+.education-item h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: #383838;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.education-item p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #5b5b5b;
+    font-size: 16px;
+}
+
+/* Achievements Section */
+.achievements-section {
+    margin-bottom: 80px;
+}
+
+.achievement-item {
+    margin-bottom: 40px;
+}
+
+.achievement-item h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: #383838;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.achievement-item p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #5b5b5b;
+    font-size: 16px;
+}
+
+/* Beyond Design Section */
+.beyond-section {
+    margin-bottom: 80px;
+}
+
+.interests-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+.interest-item {
+    background-color: transparent;
+    border: 2px solid #383838;
+    color: #383838;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.interest-item:hover {
+    background: linear-gradient(135deg, #DA4646 0%, #FFB26E 100%);
+    border: 2px solid #F9FCF3;
+    color: #F9FCF3; /* White text on hover */
+    transform: translateY(-2px);
+}
+
+/* Quote Section */
+.quote-section {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.quote {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    color: #5b5b5b;
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Social Footer */
+.social-footer {
+    position: absolute;
+    width: 130px;
+    height: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(218, 70, 70, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #da4646;
+    transform: translateY(-2px);
+}
+
+.social-icon:hover img {
+    filter: brightness(0) invert(1);
+}
+
+.social-icon img {
+    width: 32px;
+    height: 32px;
+    transition: filter 0.3s ease;
+}
+
+.social-icon span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: #f9fcf3;
+    font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 1440px) {
+    .container {
+        width: 100vw;
+        max-width: 1440px;
+    }
+    .main-wrapper {
+        width: 100%;
+        left: 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    .header {
+        width: 90%;
+        left: 5%;
+    }
+    .nav-link {
+        font-size: 18px;
+    }
+    .about-main {
+        left: 5%;
+        right: 5%;
+    }
+    .page-title {
+        font-size: 36px;
+    }
+    .personality-section {
+        gap: 40px;
+    }
+    .profile-photo {
+        width: 220px;
+        height: 270px;
+    }
+}
+
+@media (max-width: 968px) {
+    .about-main {
+        top: 150px;
+    }
+    .personality-section {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .traits-left,
+    .traits-right {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    .page-title {
+        font-size: 36px;
+        margin-bottom: 60px;
+    }
+    .profile-photo {
+        width: 200px;
+        height: 250px;
+    }
+    .section-title {
+        font-size: 32px;
+    }
+    .philosophy-title {
+        font-size: 28px;
+        display: block;
+        margin-bottom: 20px;
+    }
+    .philosophy-words {
+        display: block;
+    }
+    .philosophy-word.intention {
+        display: block;
+    }
+    .philosophy-word {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        height: auto;
+        min-height: 100vh;
+    }
+    .main-wrapper {
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 50px;
+    }
+    .header {
+        position: relative;
+        top: 30px;
+        height: auto;
+        margin-bottom: 30px;
+    }
+    .navigation {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    .nav-link {
+        position: relative;
+        left: 0 !important;
+        font-size: 18px;
+    }
+    .about-main {
+        position: relative;
+        top: 0;
+        left: 20px;
+        right: 20px;
+        bottom: auto;
+    }
+    .page-title {
+        font-size: 32px;
+        margin-bottom: 50px;
+    }
+    .personality-section {
+        margin-bottom: 60px;
+    }
+    .profile-photo {
+        width: 180px;
+        height: 220px;
+    }
+    .trait-tag,
+    .interest-item {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    .philosophy-title {
+        font-size: 24px;
+        display: block;
+        margin-bottom: 15px;
+    }
+    .philosophy-words {
+        display: block;
+    }
+    .philosophy-word.intention {
+        display: block;
+    }
+    .philosophy-word {
+        font-size: 28px;
+    }
+    .education-item h3,
+    .achievement-item h3 {
+        font-size: 18px;
+    }
+    .education-item p,
+    .achievement-item p {
+        font-size: 14px;
+    }
+    .quote {
+        font-size: 16px;
+        padding: 0 20px;
+    }
+    .interests-grid {
+        justify-content: center;
+    }
+}

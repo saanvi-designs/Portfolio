@@ -1,0 +1,382 @@
+/* Reset and base styles */
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+.fjalla-one-regular {
+  font-family: "Fjalla One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bg-dots {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#CBD1BF 1.4px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 0; /* sits below .background */
+    animation: fadeOut 10s ease forwards;
+    pointer-events: none; /* prevent blocking clicks */
+}
+
+.background {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #F9FCF3;
+    display: grid;
+    justify-items: center;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+/* Container */
+.container {
+    background-color: #F9FCF3;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.main-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #F9FCF3;
+    top: -11px;
+}
+
+/* Header Navigation */
+.header {
+    position: absolute;
+    width: 1029px;
+    height: 24px;
+    top: 73px;
+    left: 221px;
+    z-index: 3;   /* ✅ keeps it above background */
+}
+
+.navigation {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 4;   /* ✅ extra safety */
+}
+
+.nav-link {
+    position: absolute;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: #383838;
+    font-size: 20px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #da4646;
+}
+
+.nav-home {
+    left: 0;
+}
+
+.nav-project {
+    left: 211px;
+}
+
+.nav-about {
+    left: 441px;
+}
+
+.nav-contact {
+    left: 689px;
+}
+
+.nav-resume {
+    left: 899px;
+}
+
+/* Main Content */
+.projects-main {
+    position: relative;   /* or just remove position completely */
+    padding: 160px 100px 100px;  /* space from top & sides */
+    width: auto;
+    min-height: 100vh;   /* ensure it fills at least the screen */
+}
+
+.projects-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Left Side - Contact Info */
+.projects-left {
+    padding: 40px 0;
+}
+
+.projects-title {
+    font-family: "Fjalla One", sans-serif;
+    font-weight: 400;
+    color: #da4646;
+    font-size: 40px;
+    line-height: 1.2;
+    margin-bottom: 50px;
+    margin-top: 10px;
+}
+
+.section-title {
+    font-family: "Fjalla One", sans-serif;
+    font-weight: 400;
+    color: #383838;
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 50px;
+}
+
+.section-title:not(:first-of-type) {
+    margin-top: 100px; /* adjust this value as needed */
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+/* Project Cards */
+.project-card {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    padding: 0;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.project-card:hover .project-name {
+    color: #da4646;
+}
+
+.project-card:hover .project-image {
+    /* Remove box-shadow and scale transform */
+    /* box-shadow: 0 15px 35px rgb(127, 127, 127); */
+    /* transform: scale(1.02); */
+    border-radius: 24px; /* Increase border-radius on hover */
+    transform: scale(1.02);
+}
+
+.project-card:hover .project-image::before {
+    opacity: 0.6;
+}
+
+/* Project Image */
+.project-image {
+    width: 1190px;
+    height: 300px;
+    background-color: #cccccc;
+    border-radius: 2px; /* Much smaller initial border-radius */
+    margin-bottom: 20px;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+}
+
+.project-image::before {
+    display: none; /* Hide the placeholder icon */
+}
+
+/* Project Name */
+.project-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #383838;
+    font-size: 20px;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+/* Footer */
+.footer {
+    position: relative;  /* so it flows naturally */
+    width: 100%;         /* span across */
+    height: auto;
+    margin-top: 40px;    /* push it down after content */
+    display: flex;
+    justify-content: center;
+}
+
+.social-links {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-link {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(218, 70, 70, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    background-color: #da4646;
+    transform: translateY(-2px);
+}
+
+.social-link:hover img {
+    filter: brightness(0) invert(1);
+}
+
+.social-link img {
+    width: 32px;
+    height: 32px;
+    transition: filter 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 1440px) {
+    .container {
+        width: 100vw;
+        max-width: 1440px;
+    }
+    .main-wrapper {
+        width: 100%;
+        left: 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    .header {
+        width: 90%;
+        left: 5%;
+    }
+    .nav-link {
+        font-size: 18px;
+    }
+    .projects-main {
+        padding: 140px 50px 100px;
+    }
+    .projects-title {
+        font-size: 36px;
+    }
+    .section-title {
+        font-size: 32px;
+    }
+    .project-image {
+        width: 100%;
+        max-width: 800px;
+    }
+}
+
+@media (max-width: 968px) {
+    .projects-main {
+        padding: 120px 30px 80px;
+    }
+    .projects-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .projects-title {
+        font-size: 32px;
+        text-align: center;
+    }
+    .section-title {
+        font-size: 28px;
+        text-align: center;
+    }
+    .project-image {
+        width: 100%;
+        height: 250px;
+    }
+    .projects-grid {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        height: auto;
+        min-height: 100vh;
+    }
+    .main-wrapper {
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 50px;
+    }
+    .header {
+        position: relative;
+        top: 30px;
+        height: auto;
+        margin-bottom: 30px;
+    }
+    .navigation {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    .nav-link {
+        position: relative;
+        left: 0 !important;
+        font-size: 18px;
+    }
+    .projects-main {
+        position: relative;
+        top: 0;
+        padding: 20px;
+    }
+    .projects-title {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+    .section-title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+    .section-title:not(:first-of-type) {
+        margin-top: 60px;
+    }
+    .project-image {
+        height: 200px;
+    }
+    .project-name {
+        font-size: 18px;
+    }
+    .projects-grid {
+        gap: 30px;
+    }
+    .footer {
+        margin-top: 60px;
+    }
+}

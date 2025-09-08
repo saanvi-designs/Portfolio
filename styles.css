@@ -1,0 +1,493 @@
+/* Reset and base styles */
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+.fjalla-one-regular {
+  font-family: "Fjalla One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #F9FCF3;
+    display: grid;
+    justify-items: center;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+/* Container */
+.container {
+    background-color: #F9FCF3;
+    overflow: hidden;
+    width: 1440px;
+    height: 1120px;
+}
+
+.main-wrapper {
+    position: relative;
+    width: 1451px;
+    height: 1131px;
+    top: -11px;
+    left: -10px;
+    background-color: #F9FCF3;
+}
+
+.bg-dots {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#CBD1BF 1.4px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 0; /* sits below .background */
+    animation: fadeOut 10s ease forwards;
+    pointer-events: none; /* prevent blocking clicks */
+}
+
+.background {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Header Navigation */
+.header {
+    position: absolute;
+    width: 1029px;
+    height: 24px;
+    top: 73px;
+    left: 221px;
+}
+
+.navigation {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.nav-link {
+    position: absolute;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: #383838;
+    font-size: 20px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #da4646;
+}
+
+.nav-home {
+    left: 0;
+}
+
+.nav-project {
+    left: 211px;
+}
+
+.nav-about {
+    left: 441px;
+}
+
+.nav-contact {
+    left: 689px;
+}
+
+.nav-resume {
+    left: 899px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #da4646;
+}
+
+/* Main Content */
+.main-title {
+    position: absolute;
+    top: 209px;
+    left: 250px;
+    font-family: "Fjalla One", sans-serif;
+    font-weight: 400;
+    color: #383838;
+    font-size: 40px;
+    line-height: normal;
+}
+
+.subtitle {
+    position: absolute;
+    width: 754px;
+    top: 259px;
+    left: 253px;
+    font-family: "Fjalla One", sans-serif;
+    font-weight: 400;
+    color: #da4646;
+    font-size: 40px;
+    line-height: normal;
+}
+
+/* Tagline Card */
+.tagline-card {
+  position: absolute;
+  width: 50vw;
+  height: 108px;
+  top: 403px;
+  left: 50vw;
+  background: linear-gradient(135deg, #DA4646 0%, #FFB26E 100%);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  padding-left: 38px;
+  overflow: hidden;
+}
+
+.tagline-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #f9fcf3;
+    font-size: 30px;
+    line-height: 1.2;
+}
+
+.tagline-text em {
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* Project Sections */
+.project-sections {
+    position: absolute;
+    width: 955px;
+    height: 180px;
+    top: 721px;
+    left: 255px;
+}
+
+.project-section {
+    position: absolute;
+    width: 100%;
+    height: 80px; 
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    border: none;
+    background: none;
+    text-align: left;
+}
+
+.project-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;            
+    background: linear-gradient(135deg, #DA4646 0%, #FFB26E 100%);
+    border-radius: 6px;
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+
+.project-section:hover::before {
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+}
+
+.project-section:first-child {
+    position: absolute;
+    top: -5px;
+}
+
+.project-section:last-child {
+    position: absolute;
+    top: 70px;
+}
+
+.project-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #383838;
+    font-size: 40px;
+    line-height: 1.4;
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+/* Change text color on hover */
+.project-section:hover .project-title {
+    color: #f9fcf3;
+}
+
+.project-button {
+    width: 46px;
+    height: 46px;
+    background: linear-gradient(135deg, #DA4646 0%, #FFB26E 100%);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 3;
+    transition: all 0.4s ease; /* Match the transition timing */
+    flex-shrink: 0;
+    opacity: 1; /* Ensure it starts visible */
+}
+
+.project-section:hover .project-button {
+    background: transparent; /* Remove the circular background */
+    border-radius: 0; /* Remove the circular shape */
+    opacity: 0.8; /* Slightly fade the arrow icon for better integration */
+}
+
+.project-button svg {
+    stroke: #f9fcf3;
+    transition: opacity 0.3s ease;
+}
+
+/* Keep the arrow visible but integrated */
+.project-section:hover .project-button svg {
+    opacity: 1;
+}
+
+.divider-line {
+    position: absolute;
+    width: 951px;
+    height: 2px;
+    top: 72px;
+    left: 0;
+    background-color: #383838;
+    opacity: 1;
+}
+
+/* Footer */
+.footer {
+    position: absolute;
+    width: 130px;
+    height: 50px;
+    top: 1031px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.social-links {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-link {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(218, 70, 70, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    background-color: #da4646;
+    transform: translateY(-2px);
+}
+
+.social-link:hover img {
+    filter: brightness(0) invert(1);
+}
+
+.social-link img {
+    width: 32px;
+    height: 32px;
+    transition: filter 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 1440px) {
+    .container {
+        width: 100vw;
+        max-width: 1440px;
+    }
+    
+    .main-wrapper {
+        width: 100%;
+        left: 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    .header {
+        width: 90%;
+        left: 5%;
+    }
+    
+    .nav-link {
+        font-size: 18px;
+    }
+    
+    .main-title,
+    .subtitle {
+        left: 5%;
+        font-size: 36px;
+    }
+    
+    .subtitle {
+        width: 90%;
+    }
+    
+    .tagline-card {
+        width: 100vw;
+        left: 0;
+    }
+    
+    .tagline-text {
+        font-size: 26px;
+    }
+    
+    .project-sections {
+        width: 90%;
+        left: 5%;
+    }
+    
+    .project-title {
+        font-size: 36px;
+    }
+    
+    .footer {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .main-wrapper {
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 50px;
+    }
+    
+    .header {
+        position: relative;
+        top: 30px;
+        height: auto;
+        margin-bottom: 50px;
+    }
+    
+    .navigation {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    
+    .nav-link {
+        position: relative;
+        left: 0 !important;
+        font-size: 18px;
+    }
+    
+    .main-title {
+        position: relative;
+        top: 0;
+        left: 0;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 32px;
+    }
+    
+    .subtitle {
+        position: relative;
+        top: 0;
+        left: 0;
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 28px;
+        width: 100%;
+    }
+    
+    .tagline-card {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 90%;
+        margin: 0 auto 60px;
+        height: auto;
+        padding: 30px 20px;
+    }
+    
+    .tagline-text {
+        font-size: 22px;
+        text-align: center;
+    }
+    
+    .project-sections {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 90%;
+        margin: 0 auto;
+        height: auto;
+    }
+    
+    .project-section {
+        position: relative !important;
+        top: 0 !important;
+        margin-bottom: 40px;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .project-title {
+        font-size: 28px;
+        text-align: center;
+    }
+    
+    .project-button {
+        position: relative !important;
+        top: 0 !important;
+        right: 0 !important;
+    }
+    
+    .divider-line {
+        display: none;
+    }
+    
+    .footer {
+        position: relative;
+        top: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 30px;
+    }
+}
